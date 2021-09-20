@@ -14,7 +14,13 @@ namespace NewtlabAPI.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Experimento> Experimentos { get; set; }
+        public DbSet<GuiaExperimento> GuiaExperimentos { get; set; }
+        public DbSet<BancoPregunta> BancoPreguntas { get; set; }
+        public DbSet<Pregunta> Preguntas { get; set; }
+        public DbSet<Respuesta> Respuestas { get; set; }
+        public DbSet<TipoPregunta> TipoPreguntas { get; set; }
+        public DbSet<PruebaExperimento> PruebaExperimentos { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

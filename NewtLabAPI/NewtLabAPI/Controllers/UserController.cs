@@ -33,9 +33,21 @@ namespace NewtlabAPI.Controllers
         }
 
         [HttpGet("users")]
-        public IActionResult GetAllWithRole(string username, string password)
+        public IActionResult GetAllWithRole()
         {
             return Ok(_userService.GetAllWithRole());
+        }
+
+        [HttpPost("insert")]
+        public IActionResult Insert([FromBody]User user)
+        {
+            if (user == null)
+                return BadRequest(new { message = "Datos invalidos" });
+
+            user = _userService.ValidateRole(user);
+            _userService.Insert(user);
+            
+            return Ok(new { message = $"Exito. {user}"});
         }
     }
 }

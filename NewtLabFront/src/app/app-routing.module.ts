@@ -3,8 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { SigninComponent } from './components/signin/signin.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomeAdminComponent } from './components/home-admin/home-admin.component';
-import { Role } from './models/models';
 import { AuthGuardService } from './services/auth-guard.service';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { FillerComponent } from './components/filler/filler.component';
+import { UserRegistComponent } from './components/user-regist/user-regist.component';
+import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
@@ -14,12 +18,29 @@ const routes: Routes = [
     data: { role: ['Estudiante'] }
   },
   {
+    path: 'reports', canActivate: [AuthGuardService], component: ReportsComponent,
+  },
+  {
+    path: 'perfil', canActivate: [AuthGuardService], component: UserProfileComponent,
+  },
+  {
     path: 'colegio', component: HomeAdminComponent,
     canActivate: [AuthGuardService],
     data: { role: ['Profesor'] }
   },
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
-
+  {
+    path: 'registro-usuarios', component: UserRegistComponent,
+    canActivate: [AuthGuardService],
+    data: { role: ['Profesor'] },
+  },
+  {
+    path: 'usuarios', component: UsersComponent,
+    canActivate: [AuthGuardService],
+    data: { role: ['Profesor'] },
+  },
+  {
+    path: '', canActivate: [AuthGuardService], component: FillerComponent
+  },
 ];
 
 @NgModule({

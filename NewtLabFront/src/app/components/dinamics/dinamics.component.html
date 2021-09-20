@@ -1,0 +1,52 @@
+<div class="flex-container">
+  <div class="flex-item">
+    <label for="angle">Inclinación: {{ angleInput }}</label>
+    <mat-slider
+      id="angle"
+      type="range"
+      max="30"
+      min="5"
+      [(ngModel)]="angleInput"
+      step="1"
+    ></mat-slider>
+  </div>
+
+  <div class="flex-item">
+    <label for="angle">Masa: {{ massInput }} kg</label>
+    <mat-slider
+      id="Masa"
+      type="range"
+      min="20"
+      max="120"
+      [(ngModel)]="massInput"
+      step="1"
+    ></mat-slider>
+  </div>
+
+  <div class="flex-item">
+    <label for="coef">Fricción: {{ fricInput }}</label>
+    <mat-slider
+      type="range"
+      id="coef"
+      min="0.1"
+      max="0.6"
+      [(ngModel)]="fricInput"
+      step="0.1"
+    ></mat-slider>
+  </div>
+</div>
+
+<div id="cnvs"></div>
+<div class="btn-container">
+  <button class="btn btn-outline" (click)="stop()">Detener</button>
+  <button class="btn btn-colour-1" (click)="start()">Empezar</button>
+  <button class="btn btn-outline" (click)="restart()">Reiniciar</button>
+</div>
+
+<span>Tiempo transcurrido: {{ timer }} seg</span>
+<div>
+  <span>Velocidad: {{ speed }} m/s</span>
+</div>
+<div>
+  <span>Distancia Viajada: {{ distance }} m</span>
+</div>

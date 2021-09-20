@@ -11,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using Newtonsoft.Json;
 
 namespace NewtlabAPI.Services
 {
@@ -18,7 +19,9 @@ namespace NewtlabAPI.Services
     {
         AuthenticateResponse Authenticate(string username, string password);
         IEnumerable<User> GetAllWithRole();
+        void Insert(User u);
         User GetById(int id);
+        User ValidateRole(User u);
     }
     
     public class UserService: IUserService
@@ -56,13 +59,26 @@ namespace NewtlabAPI.Services
                     UserId = user.UserId,
                     Username = user.Username,
                     Password = user.Password,
-                    Role = role
+                    Role = role,
+                    Name = user.Name,
+                    LastName1 = user.LastName1,
+                    LastName2 = user.LastName2,
+                    Cedula = user.Cedula,
+                    Phone = user.Phone,
+                    Nacimiento = user.Nacimiento,
                 });
-        }
+            }
 
         public User GetById(int id)
         {
             return db.Users.SingleOrDefault(user => user.UserId == id);
+        }
+
+        public void Insert(User us)
+        {
+            
+            db.Users.Add(us);
+            db.SaveChanges();
         }
 
         private string GenerateJwtToken(User user)
@@ -76,13 +92,27 @@ namespace NewtlabAPI.Services
                 Subject = new ClaimsIdentity(new[] 
                 {
                     new Claim("id", user.UserId.ToString()),
-                    new Claim("role", user.Role.Description)
+                    
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(symkey, SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
+        }
+
+        public User ValidateRole(User u)
+        {
+            switch (u.Role.Description)
+            {
+                case "Profesor":
+                    u.Role = db.Roles.Find(2);
+                    break;
+                case "Estudiante":
+                    u.Role = db.Roles.Find(1);
+                    break;
+            }
+            return u;
         }
     }
 }
