@@ -9,11 +9,11 @@ namespace NewtlabAPI.Models
     {
         public string PreguntaId { get; set; }
         public int Puntuacion { get; set; }
-        public int Descripcion { get; set; }
+        public string Descripcion { get; set; }
         public int BancoPreguntaId { get; set; }
         public int TipoPreguntaId { get; set; }
         public TipoPregunta TipoPregunta { get; set; }
         public BancoPregunta BancoPregunta { get; set; }
-
+        public IEnumerable<Respuesta> Respuestas { get; set; }
     }
 }
