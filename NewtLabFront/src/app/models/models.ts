@@ -9,5 +9,6 @@ export class User {
   lastName2: string = '';
   phone: string = '';
   birth?: Date;
-  cedula?: string
+  cedula?: string;
+  isOn?: boolean;
 }

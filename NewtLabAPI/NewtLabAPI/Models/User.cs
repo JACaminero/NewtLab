@@ -32,5 +32,6 @@ namespace NewtlabAPI.Models
         [MaxLength(300)]
         public string Sector { get; set; }
         public DateTime Nacimiento { get; set; }
+        public bool IsOn { get; set; }
     }
 }

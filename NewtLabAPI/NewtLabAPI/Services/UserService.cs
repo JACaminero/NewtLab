@@ -20,8 +20,11 @@ namespace NewtlabAPI.Services
         AuthenticateResponse Authenticate(string username, string password);
         IEnumerable<User> GetAllWithRole();
         void Insert(User u);
+        User GetByEmail(string email);
         User GetById(int id);
+        void Modify(User u);
         User ValidateRole(User u);
+        void Delete(int id);
     }
     
     public class UserService: IUserService
@@ -66,17 +69,24 @@ namespace NewtlabAPI.Services
                     Cedula = user.Cedula,
                     Phone = user.Phone,
                     Nacimiento = user.Nacimiento,
-                });
+                    IsOn = user.IsOn
+                })
+                .OrderByDescending(u => u.IsOn);
             }
+
+        public User GetByEmail(string email)
+        {
+            return db.Users.FirstOrDefault(user => user.Username == email);
+        }
 
         public User GetById(int id)
         {
-            return db.Users.SingleOrDefault(user => user.UserId == id);
+            return db.Users.Find(id);
         }
 
         public void Insert(User us)
         {
-            
+            us.IsOn = true;
             db.Users.Add(us);
             db.SaveChanges();
         }
@@ -85,7 +95,9 @@ namespace NewtlabAPI.Services
         {
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("zhvyOBxiyOTZg+eBOMGRG4VAp86kGM1ZlL87Psby2JP6697VKKN9uyE/oRdHS4Nyy2FmqD9nrVipTpZ1nrOpH67rXSJkRZ8mQ7GCNPaLHm+v/dH/4g5WAwAwyPLTfUuD55C7AFLxk8baedPQdTQd3V0R/kmbMDceMlGrwYF0+8XROAKR7CDHSDFdOffi8JwDVKWxw+XW7deEalQiH2RYB10MVhFJ+AVKeTs39J4VPRziwmy0gKSNAUdqp3srMX1M1L7uopxP5usaER+uu1eZyxAX0PTT+1j8Nfiht5/iz9Tl4aWL0NFNz5N15nzoR4MTUz2DgA8e7e5scOzC3kAQYA==");
+            var key = Encoding.ASCII.GetBytes("zhvyOBxiyOTZg+eBOMGRG4VAp86kGM1ZlL87Psby2JP6697VKKN9uyE/oRdHS4Nyy2FmqD9nrVipTpZ1nrOpH67rXSJkRZ8" +
+                "mQ7GCNPaLHm+v/dH/4g5WAwAwyPLTfUuD55C7AFLxk8baedPQdTQd3V0R/kmbMDceMlGrwYF0+8XROAKR7CDHSDFdOffi8JwDVKWxw+XW7deEalQiH2RYB10MVhFJ" +
+                "+AVKeTs39J4VPRziwmy0gKSNAUdqp3srMX1M1L7uopxP5usaER+uu1eZyxAX0PTT+1j8Nfiht5/iz9Tl4aWL0NFNz5N15nzoR4MTUz2DgA8e7e5scOzC3kAQYA==");
             var symkey = new SymmetricSecurityKey(key);
             var tokenDescriptor = new SecurityTokenDescriptor() 
             {
@@ -113,6 +125,26 @@ namespace NewtlabAPI.Services
                     break;
             }
             return u;
+        }
+
+        public void Delete(int id)
+        {
+            var u = GetById(id);
+            u.IsOn = false;
+            db.SaveChanges();
+        }
+
+        public void Modify(User u)
+        {
+            var current = GetById(u.UserId);
+            current.Username = u.Username;
+            current.Name = u.Name;
+            current.LastName1 = u.LastName1;
+            current.LastName2 = u.LastName2;
+            current.Cedula = u.Cedula;
+            current.Phone = u.Phone;
+            current.Nacimiento = u.Nacimiento;
+            db.SaveChanges();
         }
     }
 }

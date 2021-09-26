@@ -31,6 +31,8 @@ import { PageService, SortService, FilterService, GroupService } from '@syncfusi
 import { FillerComponent } from './components/filler/filler.component';
 import { UserRegistComponent } from './components/user-regist/user-regist.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserModifComponent } from './components/user-modif/user-modif.component';
+import { BancoPregComponent } from './components/pruebas/banco-preg/banco-preg.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { UsersComponent } from './components/users/users.component';
     FillerComponent,
     UserRegistComponent,
     UsersComponent,
+    UserModifComponent,
+    BancoPregComponent,
   ],
   imports: [
     BrowserModule,

@@ -212,6 +212,9 @@ namespace NewtlabAPI.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
+                    b.Property<bool>("IsOn")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName1")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
