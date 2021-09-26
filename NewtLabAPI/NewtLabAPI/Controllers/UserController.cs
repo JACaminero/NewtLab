@@ -32,7 +32,8 @@ namespace NewtlabAPI.Controllers
             return Ok(response);
         }
 
-        [HttpGet("users")]
+        //[HttpGet("users")]
+        [HttpGet]
         public IActionResult GetAllWithRole()
         {
             return Ok(_userService.GetAllWithRole());

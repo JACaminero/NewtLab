@@ -13,6 +13,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NewtlabAPI.Services;
+using NewtlabAPI.Services.IServices;
+using NewtlabAPI.Service;
+using NewtlabAPI.Controllers;
+using NewtlabAPI.Data;
 
 namespace NewtlabAPI
 {
@@ -30,8 +34,14 @@ namespace NewtlabAPI
         {
             //services.AddAuthentication(AzureADDefaults.BearerAuthenticationScheme)
             //    .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
-            services.AddScoped<IUserService, UserService>();
+            services.AddDbContext<NewtLabContext>();
+
             services.AddControllers();
+
+            services.AddTransient<IBancoPreguntaService, BancoPreguntasServices>();
+            services.AddScoped<IUserService, UserService>();
+          
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
