@@ -27,4 +27,8 @@ export class Pregunta {
   answer3?: string
   answer4?: string
   Puntuacion?: number
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> 1842e2c23cf810d085a5907f0c70cec2eb4e43af
