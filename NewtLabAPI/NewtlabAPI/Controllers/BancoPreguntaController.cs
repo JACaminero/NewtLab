@@ -3,44 +3,77 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NewtlabAPI.Models;
+using NewtlabAPI.Services.IServices;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace NewtlabAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class BancoPreguntaController : Controller
+    [ApiController]
+    public class BancoPreguntaController : ControllerBase
     {
-        // GET: api/values
+        private readonly IBancoPreguntaService service;
+
+        public BancoPreguntaController(IBancoPreguntaService service)
+        {
+            this.service = service;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> getAll()
         {
-            return new string[] { "value1", "value2" };
+            return Ok();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetById(int id)
         {
-            return "value";
+            var get = await service.GetById(id);
+
+            return Ok(get);
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> InsertarBancoPregunta(BancoPregunta bancoPregunta)
         {
+            var add = new BancoPregunta
+            {
+                Tema = bancoPregunta.Tema,
+                FechaCreacion =  DateTime.Now,
+                ExperimentoId = bancoPregunta.ExperimentoId
+            };
+
+            await service.Insert(add);
+
+
+            return Ok("Agregado");
         }
 
-        // PUT api/values/5
+
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> ActualizarBancoPregunta(int id, BancoPregunta bancoPregunta)
         {
+
+            var getId = await service.GetById(id);
+
+            getId.Tema = bancoPregunta.Tema;
+            getId.FechaCreacion = DateTime.Now;
+
+            var getS = service.Update(getId);
+
+
+            return Ok(getS);
         }
 
-        // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult EliminarPregunta(int id)
         {
+            var get = service.Delete(id);
+
+            return Ok(get + "eliminado");
         }
     }
+
 }
