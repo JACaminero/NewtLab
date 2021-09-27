@@ -17,11 +17,7 @@ export class BancoPregComponent implements OnInit {
     answer2: new FormControl('', [Validators.required]),
     answer3: new FormControl('', [Validators.required]),
     answer4: new FormControl('', [Validators.required]),
-<<<<<<< HEAD
     selectedType: new FormControl(''),
-=======
-    selectedType: new FormControl('')
->>>>>>> 1842e2c23cf810d085a5907f0c70cec2eb4e43af
   });
 
   ngOnInit(): void {
