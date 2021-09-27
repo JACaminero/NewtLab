@@ -14,7 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using NewtlabAPI.Services;
 using NewtlabAPI.Services.IServices;
-using NewtlabAPI.Service;
+using NewtlabAPI.Services.Service;
 using NewtlabAPI.Controllers;
 using NewtlabAPI.Data;
 

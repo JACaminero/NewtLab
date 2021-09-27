@@ -383,3 +383,11 @@ C:/Users/juanc/Desktop/NewtLab/NewtLabAPI/NewtlabAPI/bin/Debug/netcoreapp3.1/Mic
 /Users/anyelovinzen/NewtLab/NewtLabAPI/NewtLabAPI/obj/Debug/netcoreapp3.1/NewtlabAPI.dll
 /Users/anyelovinzen/NewtLab/NewtLabAPI/NewtLabAPI/obj/Debug/netcoreapp3.1/NewtlabAPI.pdb
 /Users/anyelovinzen/NewtLab/NewtLabAPI/NewtlabAPI/obj/Debug/netcoreapp3.1/NewtlabAPI.genruntimeconfig.cache
+C:\Users\juanc\Desktop\NewtLab\NewtLabAPI\NewtlabAPI\obj\Debug\netcoreapp3.1\NewtlabAPI.csprojAssemblyReference.cache
+C:\Users\juanc\Desktop\NewtLab\NewtLabAPI\NewtlabAPI\obj\Debug\netcoreapp3.1\NewtlabAPI.AssemblyInfoInputs.cache
+C:\Users\juanc\Desktop\NewtLab\NewtLabAPI\NewtlabAPI\obj\Debug\netcoreapp3.1\NewtlabAPI.AssemblyInfo.cs
+C:\Users\juanc\Desktop\NewtLab\NewtLabAPI\NewtlabAPI\obj\Debug\netcoreapp3.1\NewtlabAPI.csproj.CoreCompileInputs.cache
+C:\Users\juanc\Desktop\NewtLab\NewtLabAPI\NewtlabAPI\obj\Debug\netcoreapp3.1\NewtlabAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\juanc\Desktop\NewtLab\NewtLabAPI\NewtlabAPI\obj\Debug\netcoreapp3.1\NewtlabAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\juanc\Desktop\NewtLab\NewtLabAPI\NewtlabAPI\obj\Debug\netcoreapp3.1\NewtlabAPI.dll
+C:\Users\juanc\Desktop\NewtLab\NewtLabAPI\NewtlabAPI\obj\Debug\netcoreapp3.1\NewtlabAPI.pdb

@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/anyelovinzen/NewtLab/NewtLabAPI/NewtlabAPI/NewtlabAPI.csproj": {}
+    "C:\\Users\\juanc\\Desktop\\NewtLab\\NewtLabAPI\\NewtlabAPI\\NewtlabAPI.csproj": {}
   },
   "projects": {
-    "/Users/anyelovinzen/NewtLab/NewtLabAPI/NewtlabAPI/NewtlabAPI.csproj": {
+    "C:\\Users\\juanc\\Desktop\\NewtLab\\NewtLabAPI\\NewtlabAPI\\NewtlabAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/anyelovinzen/NewtLab/NewtLabAPI/NewtlabAPI/NewtlabAPI.csproj",
+        "projectUniqueName": "C:\\Users\\juanc\\Desktop\\NewtLab\\NewtLabAPI\\NewtlabAPI\\NewtlabAPI.csproj",
         "projectName": "NewtlabAPI",
-        "projectPath": "/Users/anyelovinzen/NewtLab/NewtLabAPI/NewtlabAPI/NewtlabAPI.csproj",
-        "packagesPath": "/Users/anyelovinzen/.nuget/packages/",
-        "outputPath": "/Users/anyelovinzen/NewtLab/NewtLabAPI/NewtlabAPI/obj/",
+        "projectPath": "C:\\Users\\juanc\\Desktop\\NewtLab\\NewtLabAPI\\NewtlabAPI\\NewtlabAPI.csproj",
+        "packagesPath": "C:\\Users\\juanc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\juanc\\Desktop\\NewtLab\\NewtLabAPI\\NewtlabAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/anyelovinzen/.config/NuGet/NuGet.Config"
+          "C:\\Users\\juanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -86,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
