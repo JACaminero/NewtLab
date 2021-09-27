@@ -32,49 +32,11 @@ namespace NewtlabAPI.Controllers
             return Ok(response);
         }
 
-        [HttpGet("get/{id}")]
-        public IActionResult GetSingle(int id)
-        {
-            var user = _userService.GetById(id);
-            if (user == null)
-                return BadRequest(new { message = "Usuario no exite" });
-
-            return Ok(new
-            {
-                name = user.Name,
-                lastName1 = user.LastName1,
-                lastName2 = user.LastName2,
-                birth = user.Nacimiento.ToShortDateString(),
-                cedula = user.Cedula,
-                phone = user.Phone,
-                userId = user.UserId,
-                username = user.Username
-            });
-        }
-
-        [HttpGet("users")]
+        //[HttpGet("users")]
+        [HttpGet]
         public IActionResult GetAllWithRole()
         {
-            List<object> returnable = new List<object>();
-            var users = _userService.GetAllWithRole().ToList();
-            foreach (var i in users)
-            {
-                returnable.Add(new
-                {
-                    UserId = i.UserId,
-                    Username = i.Username,
-                    Password = i.Password,
-                    Role = i.Role.Description,
-                    Name = i.Name,
-                    LastName1 = i.LastName1,
-                    LastName2 = i.LastName2,
-                    Cedula = i.Cedula,
-                    Phone = i.Phone,
-                    Birth = i.Nacimiento.ToShortDateString(),
-                    IsOn = i.IsOn
-                });
-            }
-            return Ok(returnable);
+            return Ok(_userService.GetAllWithRole());
         }
 
         [HttpPost("insert")]
@@ -87,24 +49,6 @@ namespace NewtlabAPI.Controllers
             _userService.Insert(user);
             
             return Ok(new { message = $"Exito. {user}"});
-        }
-        
-        [HttpPut("modify")]
-        public IActionResult Edit([FromBody] User user)
-        {
-            if (user == null)
-                return BadRequest(new { message = "Datos invalidos" });
-
-            _userService.Modify(user);
-
-            return Ok(new { message = $"Exito." });
-        }
-
-        [HttpPut("delete/{id}")]
-        public IActionResult Delete(int id)
-        {
-            _userService.Delete(id);
-            return Ok(new { message = $"Exito." });
         }
     }
 }

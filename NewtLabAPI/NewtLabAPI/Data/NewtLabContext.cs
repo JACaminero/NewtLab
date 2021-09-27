@@ -24,7 +24,8 @@ namespace NewtlabAPI.Data
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.;Database=NewtLab;Trusted_Connection=True;");
+            // optionsBuilder.UseSqlServer(@"Server=.;Database=NewtLab;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"server=localhost; user=sa; password=someThingComplicated1234; database=NewtLab; Integrated Security=false;");
         }
 
     }
