@@ -13,10 +13,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NewtlabAPI.Services;
-using NewtlabAPI.Services.IServices;
-using NewtlabAPI.Services.Service;
 using NewtlabAPI.Controllers;
 using NewtlabAPI.Data;
+using NewtlabAPI.Services.IServices;
+using NewtlabAPI.Services.Service;
 
 namespace NewtlabAPI
 {
@@ -35,10 +35,9 @@ namespace NewtlabAPI
             //services.AddAuthentication(AzureADDefaults.BearerAuthenticationScheme)
             //    .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
             services.AddDbContext<NewtLabContext>();
-
-            services.AddControllers();
-
             services.AddTransient<IBancoPreguntaService, BancoPreguntasServices>();
+            services.AddControllers();
+           
             services.AddScoped<IUserService, UserService>();
           
           
