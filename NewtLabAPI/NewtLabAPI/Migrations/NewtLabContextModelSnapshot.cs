@@ -212,6 +212,9 @@ namespace NewtlabAPI.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
+                    b.Property<bool>("IsOn")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName1")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
@@ -314,7 +317,7 @@ namespace NewtlabAPI.Migrations
             modelBuilder.Entity("NewtlabAPI.Models.Respuesta", b =>
                 {
                     b.HasOne("NewtlabAPI.Models.Pregunta", "Pregunta")
-                        .WithMany()
+                        .WithMany("Respuestas")
                         .HasForeignKey("PreguntaId");
 
                     b.Navigation("Pregunta");
@@ -327,6 +330,11 @@ namespace NewtlabAPI.Migrations
                         .HasForeignKey("RoleId");
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("NewtlabAPI.Models.Pregunta", b =>
+                {
+                    b.Navigation("Respuestas");
                 });
 #pragma warning restore 612, 618
         }

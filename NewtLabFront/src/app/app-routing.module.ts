@@ -9,6 +9,8 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { FillerComponent } from './components/filler/filler.component';
 import { UserRegistComponent } from './components/user-regist/user-regist.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserModifComponent } from './components/user-modif/user-modif.component';
+import { BancoPregComponent } from './components/pruebas/banco-preg/banco-preg.component';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
@@ -35,6 +37,14 @@ const routes: Routes = [
   },
   {
     path: 'usuarios', component: UsersComponent,
+    canActivate: [AuthGuardService],
+    data: { role: ['Profesor'] },
+  }, {
+    path: 'usuarios/:id', component: UserModifComponent,
+    canActivate: [AuthGuardService],
+    data: { role: ['Profesor'] },
+  }, {
+    path: 'preguntas', component: BancoPregComponent,
     canActivate: [AuthGuardService],
     data: { role: ['Profesor'] },
   },

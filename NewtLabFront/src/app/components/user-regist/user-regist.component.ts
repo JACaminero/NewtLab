@@ -37,5 +37,41 @@ export class UserRegistComponent {
     u.birth = this.userForm.controls.birth.value;
     u.role = this.userForm.controls.role.value;
     this.uServ.insert(u).subscribe();
+    if(this.userForm.valid)
+     alert('Operacion exitosa')
+    else
+     alert('Error')
+
+  }
+
+
+  valida_cedula(ced: string) {
+    var c = ced.replace(/-/g, '');
+    var cedula = c.substr(0, c.length - 1);
+    var verificador = c.substr(c.length - 1, 1).length;
+    var suma = 0;
+    let res
+    var cedulaValida = 0;
+    if (ced.length < 11) { return false; }
+    for (let i = 0; i < cedula.length; i++) {
+      let mod: number;
+      if ((i % 2) == 0) { mod = 1 } else { mod = 2 }
+      res = cedula.substr(i, 1).length * mod;
+      if (res > 9) {
+        res = res.toString();
+        let uno = res.substr(0, 1);
+        let dos = res.substr(1, 1);
+        res = eval(uno) + eval(dos);
+      }
+      suma += eval(res);
+    }
+    let el_numero = (10 - (suma % 10)) % 10;
+    if (el_numero == verificador && cedula.substr(0, 3) != "000") {
+      cedulaValida = 1;
+    }
+    else {
+      cedulaValida = 0;
+    }
+    return cedulaValida;
   }
 }

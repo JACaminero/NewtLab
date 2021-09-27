@@ -9,5 +9,22 @@ export class User {
   lastName2: string = '';
   phone: string = '';
   birth?: Date;
-  cedula?: string
+  cedula?: string;
+  isOn?: boolean;
+}
+
+export class BancoPreg {
+  BancoPreguntaId?: number = 0
+  Tema?: string = ''
+  FechaCreacion?: string = ''
+  Experimento?: any
+}
+
+export class Pregunta {
+  description?: string
+  answer1?: string
+  answer2?: string
+  answer3?: string
+  answer4?: string
+  Puntuacion?: number
 }
