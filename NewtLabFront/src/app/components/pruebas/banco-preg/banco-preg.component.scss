@@ -68,31 +68,34 @@
     padding: 5px 25px;
     background-color: #21bf73;
 }
-
 .question {
-    // width: 70%;
+    width: 70%;
     word-spacing: 2px;
-    background-color: #ddd;
-    padding: 20px;
+    background-color: #FFF;
+    border-radius: 13px;
 }
-
 .question-container {
     display: flex;
     justify-content: center;
-    border: solid 0.5px;
-    background-color: #ddd;
-    border-radius: 13px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
+.banco-cont {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.banco {
+    width: 70%;
+    background-color: #FFF;
+    border-radius: 13px;
+    padding: 20px;
+    word-spacing: 2px;
 
-// table.meta { margin: 0 0 3em; }
+}
 .example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
 }
-
 .example-full-width {
     width: 100%;
 }
@@ -103,4 +106,10 @@
 }
 .answer-label {
     font-size: small;
+}
+.btn-circle {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
 }
