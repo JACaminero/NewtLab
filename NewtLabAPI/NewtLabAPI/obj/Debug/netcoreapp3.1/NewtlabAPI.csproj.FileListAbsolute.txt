@@ -382,3 +382,4 @@ C:/Users/juanc/Desktop/NewtLab/NewtLabAPI/NewtlabAPI/bin/Debug/netcoreapp3.1/Mic
 /Users/anyelovinzen/NewtLab/NewtLabAPI/NewtLabAPI/obj/Debug/netcoreapp3.1/NewtlabAPI.dll
 /Users/anyelovinzen/NewtLab/NewtLabAPI/NewtLabAPI/obj/Debug/netcoreapp3.1/NewtlabAPI.pdb
 /Users/anyelovinzen/NewtLab/NewtLabAPI/NewtlabAPI/obj/Debug/netcoreapp3.1/NewtlabAPI.genruntimeconfig.cache
+/Users/anyelovinzen/NewtLab/NewtLabAPI/NewtLabAPI/obj/Debug/netcoreapp3.1/NewtlabAPI.csproj.AssemblyReference.cache

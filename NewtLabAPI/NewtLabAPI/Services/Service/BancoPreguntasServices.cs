@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using NewtlabAPI.Data;
 using NewtlabAPI.Models;
@@ -28,7 +29,7 @@ namespace NewtlabAPI.Services.Service
 
         public IEnumerable<BancoPregunta> GetAll()
         {
-            throw new NotImplementedException();
+           return context.BancoPreguntas.ToList();
         }
 
         public async Task<BancoPregunta> GetById(int id) => await context.BancoPreguntas.FindAsync(id);

@@ -24,7 +24,8 @@ namespace NewtlabAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> getAll()
         {
-            return Ok();
+            var getAll = service.GetAll();
+            return Ok(getAll);
         }
 
         [HttpGet("{Id}")]

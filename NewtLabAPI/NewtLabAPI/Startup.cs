@@ -36,6 +36,9 @@ namespace NewtlabAPI
             //    .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
             services.AddDbContext<NewtLabContext>();
             services.AddTransient<IBancoPreguntaService, BancoPreguntasServices>();
+            services.AddTransient<IExperimentoService, ExperimentoService>();
+            services.AddTransient<IGuiaExperimento, GuiaExperimentoService>();
+            services.AddTransient<IPreguntaService, PreguntaService>();
             services.AddControllers();
            
             services.AddScoped<IUserService, UserService>();
