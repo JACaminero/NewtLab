@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{B1FB3FB5-8FF1-4CE3-87D0-DD5EBCA10233}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NewtLabAPI/Models/TipoPregunta.cs">
+    <Files>
+      <File FileName="NewtlabAPI/Controllers/TipoPreguntaController.cs" Line="45" Column="1" />
+      <File FileName="NewtlabAPI/Models/TipoPregunta.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NewtLabAPI" expanded="True">
+            <Node name="NewtlabAPI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="TipoPregunta.cs" selected="True" />
+              </Node>
+              <Node name="Services" expanded="True">
+                <Node name="IServices" expanded="True" />
+                <Node name="Service" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.NewtlabAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
